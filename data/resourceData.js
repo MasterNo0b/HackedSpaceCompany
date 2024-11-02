@@ -92,7 +92,7 @@ Game.resourceData = (function () {
         desc: 'Metal is one of the primary resources. It is used for many things, including storage upgrades, machinery and most things in space.',
         icon: 'metalIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 1600,
         unlocked: true
     };
 
@@ -101,7 +101,7 @@ Game.resourceData = (function () {
         desc: 'Gems are one of the primary resources. They are used for advanced machines and for powerful tools and components. They are more useful in later game.',
         icon: 'gemIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 1600,
         unlocked: true
     };
 
@@ -110,7 +110,7 @@ Game.resourceData = (function () {
         desc: 'Charcoal is a secondary tier resource and is used by Engines to produce power for your company. 1 Charcoal is created by burning wood',
         icon: 'charcoalIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 1600,
         unlocked: false
     };
 
@@ -119,7 +119,7 @@ Game.resourceData = (function () {
         desc: 'Wood is one of the primary resources. It is used more often in early game for tools and buildings.',
         icon: 'woodIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 1600,
         unlocked: true
     };
 
@@ -128,7 +128,7 @@ Game.resourceData = (function () {
         desc: 'Silicon is useful for automatic mining systems of the third tier. These will be very useful in building your first wonder. Despite being a high tier resource, it is found mainly on Earth by heating sand.',
         icon: 'siliconIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 1600,
         unlocked: false
     };
 
@@ -142,7 +142,7 @@ Game.resourceData = (function () {
         desc: 'Lunarite is found on the Moon and is a rare type of resource not found on Earth. It is much stronger than regular metal but is a lot harder to get.',
         icon: 'lunariteIcon',
         category: 'innerSol',
-        baseCapacity: 50,
+        baseCapacity: 1600,
         unlocked: false
     };
 
@@ -269,7 +269,7 @@ Game.storageData = (function(){
         desc: 'Upgrade your Plasma storage size to ',
         resource: 'plasma',
         cost: {
-            'plasma': 50
+            'plasma': 0
         }
     });
 
@@ -277,8 +277,8 @@ Game.storageData = (function(){
         desc: 'Upgrade your Uranium storage size to ',
         resource: 'uranium',
         cost: {
-            'uranium': 50,
-            'lunarite': 20
+            'uranium': 0,
+            'lunarite': 0
         }
     });
 
@@ -308,7 +308,7 @@ Game.storageData = (function(){
         desc: 'Upgrade your Metal storage size to ',
         resource: 'metal',
         cost: {
-            'metal': 50
+            'metal': 0
         }
     });
 
@@ -316,8 +316,8 @@ Game.storageData = (function(){
         desc: 'Upgrade your Gem storage size to ',
         resource: 'gem',
         cost: {
-            'gem': 50,
-            'metal': 20
+            'gem': 0,
+            'metal': 0
         }
     });
 
@@ -325,8 +325,8 @@ Game.storageData = (function(){
         desc: 'Upgrade your Charcoal storage size to ',
         resource: 'charcoal',
         cost: {
-            'charcoal': 50,
-            'metal': 20
+            'charcoal': 0,
+            'metal': 0
         }
     });
 
@@ -334,8 +334,8 @@ Game.storageData = (function(){
         desc: 'Upgrade your Wood storage size to ',
         resource: 'wood',
         cost: {
-            'wood': 50,
-            'metal': 20
+            'wood': 0,
+            'metal': 0
         }
     });
 
@@ -343,8 +343,8 @@ Game.storageData = (function(){
         desc: 'Upgrade your Silicon storage size to ',
         resource: 'silicon',
         cost: {
-            'silicon': 50,
-            'lunarite': 20
+            'silicon': 0,
+            'lunarite': 0
         }
     });
 
