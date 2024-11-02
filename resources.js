@@ -107,20 +107,13 @@ function upgradeOilStorage(){
 }
 
 function upgradeMetalStorage(){
-	if(getResource(RESOURCE.Metal) >= getStorage(RESOURCE.Metal)*storagePrice){
-		Game.resources.takeResource(RESOURCE.Metal, getStorage(RESOURCE.Metal)*storagePrice);
-		metalStorage = metalNextStorage;
-		metalNextStorage *= 2;
-	}
+	metalStorage = metalNextStorage;
+	metalNextStorage *= 2;
 }
 
 function upgradeGemStorage(){
-	if(getResource(RESOURCE.Gem) >= getStorage(RESOURCE.Gem)*storagePrice && getResource(RESOURCE.Metal) >= getStorage(RESOURCE.Gem)/2.5*storagePrice){
-		Game.resources.takeResource(RESOURCE.Gem, getStorage(RESOURCE.Gem)*storagePrice);
-		Game.resources.takeResource(RESOURCE.Metal, getStorage(RESOURCE.Gem)/2.5*storagePrice);
-		gemStorage = gemNextStorage;
-		gemNextStorage *= 2;
-	}
+	gemStorage = gemNextStorage;
+	gemNextStorage *= 2;
 }
 
 function upgradeCharcoalStorage(){
