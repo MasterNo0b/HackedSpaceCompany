@@ -19,7 +19,7 @@ Game.resources = (function(){
                 htmlId: 'res_' + id,
                 current: 0,
                 perSecond: 0,
-                perClick: 1,
+                perClick: 10,
                 iconPath: Game.constants.iconPath,
                 iconExtension: Game.constants.iconExtension,
                 displayNeedsUpdate: true,
