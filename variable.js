@@ -4,9 +4,9 @@ var versionNumber = "V0.5.1.2 Beta"; var companyName = "Space";
 
 // unlocked & activated
 
-var researchUnlocked = true; var researched = []; var available = []; var explored = [];
-var tabsUnlocked = []; var resourcesUnlocked = []; var noBorder = []; var rocketLaunched = true; var buttonsHidden = [];
-var activated = []; var techUnlocked = true; var meteoriteUnlocked = false;
+var researchUnlocked = false; var researched = []; var available = []; var explored = [];
+var tabsUnlocked = []; var resourcesUnlocked = []; var noBorder = []; var rocketLaunched = false; var buttonsHidden = [];
+var activated = []; var techUnlocked = false; var meteoriteUnlocked = false;
 var globalEnergyLock = false;
 
 
