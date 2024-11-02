@@ -61,7 +61,7 @@ Game.resourceData = (function () {
         desc: 'Metal is one of the primary resources. It is used for many things, including storage upgrades, machinery and most things in space.',
         icon: 'uraniumIcon',
         category: 'energy',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: false
     };
 
@@ -70,7 +70,7 @@ Game.resourceData = (function () {
         desc: 'Hard to handle and only found in volcanoes, Lava is one of the hardest resources to get.',
         icon: 'lavaIcon',
         category: 'energy',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: false
     };
 
@@ -83,7 +83,7 @@ Game.resourceData = (function () {
         desc: 'Oil is pumped up from the ground and is used to build Tier 2 resource gatherers.',
         icon: 'oilIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: false
     };
 
@@ -92,7 +92,7 @@ Game.resourceData = (function () {
         desc: 'Metal is one of the primary resources. It is used for many things, including storage upgrades, machinery and most things in space.',
         icon: 'metalIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: true
     };
 
@@ -101,7 +101,7 @@ Game.resourceData = (function () {
         desc: 'Gems are one of the primary resources. They are used for advanced machines and for powerful tools and components. They are more useful in later game.',
         icon: 'gemIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: true
     };
 
@@ -110,7 +110,7 @@ Game.resourceData = (function () {
         desc: 'Charcoal is a secondary tier resource and is used by Engines to produce power for your company. 1 Charcoal is created by burning wood',
         icon: 'charcoalIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: false
     };
 
@@ -119,7 +119,7 @@ Game.resourceData = (function () {
         desc: 'Wood is one of the primary resources. It is used more often in early game for tools and buildings.',
         icon: 'woodIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: true
     };
 
@@ -128,7 +128,7 @@ Game.resourceData = (function () {
         desc: 'Silicon is useful for automatic mining systems of the third tier. These will be very useful in building your first wonder. Despite being a high tier resource, it is found mainly on Earth by heating sand.',
         icon: 'siliconIcon',
         category: 'earth',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: false
     };
 
@@ -142,7 +142,7 @@ Game.resourceData = (function () {
         desc: 'Lunarite is found on the Moon and is a rare type of resource not found on Earth. It is much stronger than regular metal but is a lot harder to get.',
         icon: 'lunariteIcon',
         category: 'innerSol',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: false
     };
 
@@ -151,7 +151,7 @@ Game.resourceData = (function () {
         desc: 'Methane is a gas found in abundance on Venus. It can be used to power your company much more effectively than solid fuel.',
         icon: 'methaneIcon',
         category: 'innerSol',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: false
     };
 
@@ -160,7 +160,7 @@ Game.resourceData = (function () {
         desc: 'Titanium is a metal found mostly on Mars. It is used for building strong machines and methane power plants.',
         icon: 'titaniumIcon',
         category: 'innerSol',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: false
     };
 
@@ -169,7 +169,7 @@ Game.resourceData = (function () {
         desc: 'Gold is a metal found inside asteroids. It is used to build some Wonders and for complex machinery.',
         icon: 'goldIcon',
         category: 'innerSol',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: false
     };
 
@@ -178,7 +178,7 @@ Game.resourceData = (function () {
         desc: 'Silver is another metal most commonly found in the asteroid belt.',
         icon: 'silverIcon',
         category: 'innerSol',
-        baseCapacity: 50,
+        baseCapacity: 3200,
         unlocked: false
     };
 
@@ -299,8 +299,8 @@ Game.storageData = (function(){
         desc: 'Upgrade your Oil storage size to ',
         resource: 'oil',
         cost: {
-            'oil': 50,
-            'metal': 20
+            'oil': 0,
+            'metal': 0
         }
     });
 
@@ -308,7 +308,7 @@ Game.storageData = (function(){
         desc: 'Upgrade your Metal storage size to ',
         resource: 'metal',
         cost: {
-            'metal': 50
+            'metal': 0
         }
     });
 
@@ -316,8 +316,8 @@ Game.storageData = (function(){
         desc: 'Upgrade your Gem storage size to ',
         resource: 'gem',
         cost: {
-            'gem': 50,
-            'metal': 20
+            'gem': 0,
+            'metal': 0
         }
     });
 
@@ -325,8 +325,8 @@ Game.storageData = (function(){
         desc: 'Upgrade your Charcoal storage size to ',
         resource: 'charcoal',
         cost: {
-            'charcoal': 50,
-            'metal': 20
+            'charcoal': 0,
+            'metal': 0
         }
     });
 
@@ -334,8 +334,8 @@ Game.storageData = (function(){
         desc: 'Upgrade your Wood storage size to ',
         resource: 'wood',
         cost: {
-            'wood': 50,
-            'metal': 20
+            'wood': 0,
+            'metal': 0
         }
     });
 
