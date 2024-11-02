@@ -99,8 +99,6 @@ function upgradeUraniumStorage(){
 
 function upgradeOilStorage(){
 	if(getResource(RESOURCE.Oil) >= getStorage(RESOURCE.Oil)*storagePrice && getResource(RESOURCE.Metal) >= getStorage(RESOURCE.Oil)/2.5*storagePrice){
-		Game.resources.takeResource(RESOURCE.Oil, getStorage(RESOURCE.Oil)*storagePrice);
-		Game.resources.takeResource(RESOURCE.Metal, getStorage(RESOURCE.Oil)/2.5*storagePrice);
 		oilStorage = oilNextStorage;
 		oilNextStorage *= 2;
 	}
@@ -108,30 +106,22 @@ function upgradeOilStorage(){
 
 function upgradeMetalStorage(){
 	metalStorage = metalNextStorage;
-	metalNextStorage *= 2;
+	metalNextStorage *= 16;
 }
 
 function upgradeGemStorage(){
 	gemStorage = gemNextStorage;
-	gemNextStorage *= 2;
+	gemNextStorage *= 16;
 }
 
 function upgradeCharcoalStorage(){
-	if(getResource(RESOURCE.Charcoal) >= getStorage(RESOURCE.Charcoal)*storagePrice && getResource(RESOURCE.Metal) >= getStorage(RESOURCE.Charcoal)/2.5*storagePrice){
-		Game.resources.takeResource(RESOURCE.Charcoal, getStorage(RESOURCE.Charcoal)*storagePrice);
-		Game.resources.takeResource(RESOURCE.Metal, getStorage(RESOURCE.Charcoal)/2.5*storagePrice);
-		charcoalStorage = charcoalNextStorage;
-		charcoalNextStorage *= 2;
-	}
+	charcoalStorage = charcoalNextStorage;
+	charcoalNextStorage *= 16;
 }
 
 function upgradeWoodStorage(){
-	if(getResource(RESOURCE.Wood) >= getStorage(RESOURCE.Wood)*storagePrice && getResource(RESOURCE.Metal) >= getStorage(RESOURCE.Wood)/2.5*storagePrice){
-		Game.resources.takeResource(RESOURCE.Wood, getStorage(RESOURCE.Wood)*storagePrice);
-		Game.resources.takeResource(RESOURCE.Metal, getStorage(RESOURCE.Wood)/2.5*storagePrice);
-		woodStorage = woodNextStorage;
-		woodNextStorage *= 2;
-	}
+	woodStorage = woodNextStorage;
+	woodNextStorage *= 2;
 }
 
 function upgradeLunariteStorage(){
@@ -312,8 +302,8 @@ function updateCost(){
 	charcoalEngineMetalCost = Math.floor(50 * Math.pow(1.1,charcoalEngine));
 	charcoalEngineGemCost = Math.floor(25 * Math.pow(1.1,charcoalEngine));
 
-	solarPanelMetalCost = Math.floor(30 * Math.pow(1.1,solarPanel));
-	solarPanelGemCost = Math.floor(35 * Math.pow(1.1,solarPanel));
+	solarPanelMetalCost = 0;
+	solarPanelGemCost = 0;
 
 	methaneStationLunariteCost = Math.floor(110 * Math.pow(1.1,methaneStation));
 	methaneStationTitaniumCost = Math.floor(90 * Math.pow(1.1,methaneStation));
@@ -360,8 +350,8 @@ function updateCost(){
 	oilRigTitaniumCost = Math.floor(16800 * Math.pow(1.1,oilRig));
 	oilRigLunariteCost = Math.floor(19400 * Math.pow(1.1,oilRig));
 
-	minerWoodCost = Math.floor(5 * Math.pow(1.1,miner) * T1Price);
-	minerMetalCost = Math.floor(10 * Math.pow(1.1,miner) * T1Price);
+	minerWoodCost = 0;
+	minerMetalCost = 0;
 
 	heavyDrillOilCost = Math.floor(50 * Math.pow(1.1,heavyDrill));
 	heavyDrillGemCost = Math.floor(60 * Math.pow(1.1,heavyDrill));
@@ -375,8 +365,8 @@ function updateCost(){
 	quantumDrillGoldCost = Math.floor(18700 * Math.pow(1.1,quantumDrill));
 	quantumDrillLunariteCost = Math.floor(29000 * Math.pow(1.1,quantumDrill));
 
-	gemMinerGemCost = Math.floor(10 * Math.pow(1.1,gemMiner) * T1Price);
-	gemMinerMetalCost = Math.floor(15 * Math.pow(1.1,gemMiner) * T1Price);
+	gemMinerGemCost = 0;
+	gemMinerMetalCost = 0;
 
 	advancedDrillOilCost = Math.floor(60 * Math.pow(1.1,advancedDrill));
 	advancedDrillGemCost = Math.floor(200 * Math.pow(1.1,advancedDrill));
