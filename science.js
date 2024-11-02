@@ -1,53 +1,23 @@
 // Research Tab
 
 function getLab(){
-	if(wood >= labWoodCost && gem >= labGemCost && metal >= labMetalCost){
-		wood -= labWoodCost;
-		gem -= labGemCost;
-		metal -= labMetalCost;
-		lab += 1;
-		updateLabCost();
-	}
+	lab += 1;
 }
 
 function getLabT2(){
-	if(wood >= labT2WoodCost && gem >= labT2GemCost && metal >= labT2MetalCost){
-		wood -= labT2WoodCost;
-		gem -= labT2GemCost;
-		metal -= labT2MetalCost;
-		labT2 += 1;
-		updateLabCost();
-	}
+	labT2 += 1;
 }
 
 function getLabT3(){
-	if(wood >= labT3WoodCost && gem >= labT3GemCost && metal >= labT3MetalCost){
-		wood -= labT3WoodCost;
-		gem -= labT3GemCost;
-		metal -= labT3MetalCost;
-		labT3 += 1;
-		updateLabCost();
-	}
+	labT3 += 1;
 }
 
 function getLabT4(){
-	if(wood >= labT4WoodCost && gem >= labT4GemCost && metal >= labT4MetalCost){
-		wood -= labT4WoodCost;
-		gem -= labT4GemCost;
-		metal -= labT4MetalCost;
-		labT4 += 1;
-		updateLabCost();
-	}
+	labT4 += 1;
 }
 
 function getLabT5(){
-	if(wood >= labT5WoodCost && gem >= labT5GemCost && metal >= labT5MetalCost){
-		wood -= labT5WoodCost;
-		gem -= labT5GemCost;
-		metal -= labT5MetalCost;
-		labT5 += 1;
-		updateLabCost();
-	}
+	labT5 += 1;
 }
 
 function updateLabCost(){
