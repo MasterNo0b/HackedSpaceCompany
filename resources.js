@@ -80,7 +80,7 @@ function gainResource(resource){
 		}
 	} else {
 		if(getResource(resource) < getStorage(resource)){
-			Game.resources.addResource(resource, gainNum);
+			Game.resources.addResource(resource, 100);
 			Game.statistics.add('manualResources', gainNum);
 		}
 	}
