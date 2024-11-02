@@ -4,14 +4,14 @@ var versionNumber = "V0.5.1.2 Beta"; var companyName = "Space";
 
 // unlocked & activated
 
-var researchUnlocked = false; var researched = []; var available = []; var explored = [];
-var tabsUnlocked = []; var resourcesUnlocked = []; var noBorder = []; var rocketLaunched = false; var buttonsHidden = [];
-var activated = []; var techUnlocked = false; var meteoriteUnlocked = false;
+var researchUnlocked = true; var researched = []; var available = []; var explored = [];
+var tabsUnlocked = []; var resourcesUnlocked = []; var noBorder = []; var rocketLaunched = true; var buttonsHidden = [];
+var activated = []; var techUnlocked = true; var meteoriteUnlocked = false;
 var globalEnergyLock = false;
 
 
 // Plasma
-var plasma = 0; var plasmaps = 0;
+var plasma = 100000; var plasmaps = 0;
 var PSU = 0; var PSUSilverCost = 770000; var PSUGoldCost = 770000; var PSUUraniumCost = 550000;
 var PSUT2 = 0; var PSUT2SilverCost = 9300000; var PSUT2GoldCost = 9300000; var PSUT2UraniumCost = 6800000;
 var heater = 0; var heaterLunariteCost = 75000; var heaterGemCost = 68000; var heaterSiliconCost = 59000; var heaterToggled = true; var heaterEnergyInput = 1000; var heaterHydrogenInput = 10; var heaterOutput = 1;
@@ -19,7 +19,7 @@ var plasmatic = 0; var plasmaticLunariteCost = 810000; var plasmaticSiliconCost 
 var bath = 0; var bathLavaCost = 6200000; var bathGoldCost = 5900000; var bathMeteoriteCost = 12100; var bathToggled = true; var bathEnergyInput = 15000; var bathHydrogenInput = 100; var bathHeliumInput = 100; var bathOutput = 140;
 
 // Energy
-var energy = 0; var energyps = 0;
+var energy = 100000; var energyps = 0;
 var battery = 0; var batteryMetalCost = 50000; var batteryGemCost = 50000; var batteryLunariteCost = 30000;
 var batteryT2 = 0; var batteryT2MetalCost = 550000; var batteryT2GemCost = 550000; var batteryT2LunariteCost = 330000;
 var batteryT3 = 0; var batteryT3MetalCost = 5500000; var batteryT3GemCost = 5500000; var batteryT3LunariteCost = 3300000;
@@ -57,16 +57,16 @@ var oilRig = 0; var oilRigLunariteCost = 19400; var oilRigTitaniumCost = 16800; 
 var fossilator = 0; var fossilatorUraniumCost = 110000; var fossilatorCharcoalCost = 96000; var fossilatorLavaCost = 167000; var fossilatorEnergyInput = 258; var fossilatorOutput = 2627;
 
 // Metal
-var metal = 0; var metalStorage = 50; var metalNextStorage = 100; var metalps = 0;
-var miner = 0; var minerMetalCost = 10; var minerWoodCost = 5; var minerOutput = 1;
+var metal = 1000; var metalStorage = 1600; var metalNextStorage = 3200; var metalps = 0;
+var miner = 10; var minerMetalCost = 10; var minerWoodCost = 5; var minerOutput = 1;
 var heavyDrill = 0; var heavyDrillMetalCost = 160; var heavyDrillGemCost = 60; var heavyDrillOilCost = 50; var heavyDrillEnergyInput = 2; var heavyDrillOutput = 8;
 var gigaDrill = 0; var gigaDrillLunariteCost = 2800; var gigaDrillGemCost = 3400; var gigaDrillSiliconCost = 4100; var gigaDrillEnergyInput = 9; var gigaDrillOutput = 108;
 var quantumDrill = 0; var quantumDrillLunariteCost = 29000; var quantumDrillGoldCost = 18700; var quantumDrillMeteoriteCost = 900; var quantumDrillEnergyInput = 24; var quantumDrillOutput = 427;
 var multiDrill = 0; var multiDrillTitaniumCost = 184000; var multiDrillGoldCost = 184000; var multiDrillOilCost = 170000; var multiDrillEnergyInput = 131; var multiDrillOutput = 4768;
 
 // Gems
-var gem = 0; var gemStorage = 50; var gemNextStorage = 100; var gemps = 0;
-var gemMiner = 0; var gemMinerMetalCost = 15; var gemMinerGemCost = 10; var gemMinerOutput = 1;
+var gem = 1000; var gemStorage = 50; var gemNextStorage = 100; var gemps = 0;
+var gemMiner = 10; var gemMinerMetalCost = 15; var gemMinerGemCost = 10; var gemMinerOutput = 1;
 var advancedDrill = 0; var advancedDrillMetalCost = 120; var advancedDrillGemCost = 200; var advancedDrillOilCost = 60; var advancedDrillEnergyInput = 2; var advancedDrillOutput = 4;
 var diamondDrill = 0; var diamondDrillLunariteCost = 3400; var diamondDrillGemCost = 8000; var diamondDrillSiliconCost = 4500; var diamondDrillEnergyInput = 15; var diamondDrillOutput = 89;
 var carbyneDrill = 0; var carbyneDrillLunariteCost = 21000; var carbyneDrillGemCost = 27000; var carbyneDrillMeteoriteCost = 800; var carbyneDrillEnergyInput = 40;  var carbyneDrillOutput = 358;
