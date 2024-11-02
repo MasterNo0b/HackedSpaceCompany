@@ -499,26 +499,20 @@ function activatePortal(){
 }
 
 function rebuildStargate(){
-	if(getResource(RESOURCE.Plasma) >= stargateWonderPlasmaCost && getResource(RESOURCE.Silicon) >= stargateWonderSiliconCost && getResource(RESOURCE.Meteorite) >= stargateWonderMeteoriteCost){
-		Game.resources.takeResource(RESOURCE.Plasma, stargateWonderPlasmaCost);
-		Game.resources.takeResource(RESOURCE.Silicon, stargateWonderSiliconCost);
-		Game.resources.takeResource(RESOURCE.Meteorite, stargateWonderMeteoriteCost);
-		document.getElementById("rebuildStargate").className = "hidden";
-		document.getElementById("stargateActivation").textContent = "Activated";
-		document.getElementById("stargateActivation").className = "green";
-		document.getElementById("interstellarTab_travel_ne").className = "collapse_interstellarTab_general";
-		document.getElementById("interstellarTab_military_ne").className = "collapse_interstellarTab_general";
-		buttonsHidden.push("rebuildStargate");
-		activated.push("stargate");
-		Game.statistics.add('wondersActivated');
-		if(document.getElementById("interstellarTab").className != ""){
-			document.getElementById("interstellarTab").className = "";
-			tabsUnlocked.push("interstellarTab");
-			Game.notifySuccess("New Tab!", "You've unlocked the Interstellar Tab!");
-		}
-		newUnlock("interstellar");
-
-		Game.interstellar.getInterstellarData('stargate').unlocked = true;
-		Game.interstellar.getInterstellarData('stargate').displayNeedsUpdate = true;
+	document.getElementById("rebuildStargate").className = "hidden";
+	document.getElementById("stargateActivation").textContent = "Activated";
+	document.getElementById("stargateActivation").className = "green";
+	document.getElementById("interstellarTab_travel_ne").className = "collapse_interstellarTab_general";
+	document.getElementById("interstellarTab_military_ne").className = "collapse_interstellarTab_general";
+	buttonsHidden.push("rebuildStargate");
+	activated.push("stargate");
+	Game.statistics.add('wondersActivated');
+	if(document.getElementById("interstellarTab").className != ""){
+		document.getElementById("interstellarTab").className = "";
+		tabsUnlocked.push("interstellarTab");
+		Game.notifySuccess("New Tab!", "You've unlocked the Interstellar Tab!");
 	}
+	newUnlock("interstellar");
+	Game.interstellar.getInterstellarData('stargate').unlocked = true;
+	Game.interstellar.getInterstellarData('stargate').displayNeedsUpdate = true;
 }
