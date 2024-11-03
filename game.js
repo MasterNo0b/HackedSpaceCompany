@@ -141,7 +141,7 @@ var Game = (function() {
         this.buildings.save(data);
         this.tech.save(data);
         this.settings.save(data);
-        this.interstellar.save(data);
+        this.interstella.save(data);
         this.stargaze.save(data);
         this.updates.save(data);
 
@@ -164,7 +164,7 @@ var Game = (function() {
             this.buildings.load(data);
             this.stargaze.load(data);
             this.tech.load(data);
-            this.interstellar.load(data); 
+            this.interstella.load(data); 
             this.updates.load(data);
 
             legacyLoad(data);
@@ -197,7 +197,7 @@ var Game = (function() {
 
         $('#versionLabel').text(versionNumber);
 
-        self.interstellar.redundantChecking();
+        self.interstella.redundantChecking();
     }
 
     instance.handleOfflineGains = function(offlineTime) {
@@ -240,7 +240,7 @@ var Game = (function() {
         self.resources.initialise();
         self.buildings.initialise();
         self.tech.initialise();
-        self.interstellar.initialise();
+        self.interstella.initialise();
         self.stargaze.initialise();
 
         // Now load
