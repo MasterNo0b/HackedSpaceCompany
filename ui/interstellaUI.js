@@ -1,4 +1,4 @@
-Game.interstellarUI = (function(){
+Game.interstellaUI = (function(){
 
 	var instance = {};
 	
@@ -28,7 +28,7 @@ Game.interstellarUI = (function(){
 
     instance.initialise = function() {
 
-        this.tab = Game.ui.createTab({id: 'interstellar', title: 'Interstellar', hidden: 'hidden'});
+        this.tab = Game.ui.createTab({id: 'interstella', title: 'interstella', hidden: 'hidden'});
         this.tab.initialise();
 
         instance.titleTemplate = Handlebars.compile(
@@ -68,7 +68,7 @@ Game.interstellarUI = (function(){
                     '<p>{{desc}}</p>',
                     '<p id="{{htmlId}}_cost"></p>',
                 '</span>',
-                '<div id="{{htmlId}}_buy" onclick="Game.interstellar.comms.buildMachine(\'{{entryName}}\')" class="btn btn-default">Get {{name}}</div>',
+                '<div id="{{htmlId}}_buy" onclick="Game.interstella.comms.buildMachine(\'{{entryName}}\')" class="btn btn-default">Get {{name}}</div>',
                 '</td></tr>'].join('\n'));
 
         instance.machineTemplate = Handlebars.compile(
@@ -80,8 +80,8 @@ Game.interstellarUI = (function(){
                     '<p id="{{htmlId}}_use"></p>',
                     '<p id="{{htmlId}}_cost"></p>',
                 '</span>',
-                '<div id="{{htmlId}}_buy" onclick="Game.interstellar.antimatter.buildMachine(\'{{entryName}}\')" class="btn btn-default">Get 1</div>',
-                '<div id="{{htmlId}}_destroy" onclick="Game.interstellar.antimatter.destroyMachine(\'{{entryName}}\')" class="btn btn-default">Destroy 1</div>',
+                '<div id="{{htmlId}}_buy" onclick="Game.interstella.antimatter.buildMachine(\'{{entryName}}\')" class="btn btn-default">Get 1</div>',
+                '<div id="{{htmlId}}_destroy" onclick="Game.interstella.antimatter.destroyMachine(\'{{entryName}}\')" class="btn btn-default">Destroy 1</div>',
                 '</td></tr>'].join('\n'));
 
         instance.rocketTemplate = Handlebars.compile(
@@ -91,7 +91,7 @@ Game.interstellarUI = (function(){
                     '<p>{{desc}}</p>',
                     '<p id="{{htmlId}}_cost"></p>',
                 '</span>',
-                '<div id="{{htmlId}}_buy" onclick="Game.interstellar.rocket.buildRocket(\'tier1Rocket\')" class="btn btn-default">Get {{name}}</div>',
+                '<div id="{{htmlId}}_buy" onclick="Game.interstella.rocket.buildRocket(\'tier1Rocket\')" class="btn btn-default">Get {{name}}</div>',
                 '</td></tr>'].join('\n'));
 
         instance.rocketPartTemplate = Handlebars.compile(
@@ -101,9 +101,9 @@ Game.interstellarUI = (function(){
                     '<p>{{desc}}</p>',
                     '<p id="{{htmlId}}_cost"></p>',
                 '</span>',
-                '<div id="{{htmlId}}_buy" onclick="Game.interstellar.rocketParts.buildPart(\'{{entryName}}\', 1)" class="btn btn-default">Get {{name}}</div>',
-                '<div id="{{htmlId}}_buy10" onclick="Game.interstellar.rocketParts.buildPart(\'{{entryName}}\', 10)" class="btn btn-default">Buy 10</div>',
-                '<div id="{{htmlId}}_buy{{max}}" onclick="Game.interstellar.rocketParts.buildPart(\'{{entryName}}\', {{max}})" class="btn btn-default">Buy {{max}}</div>',
+                '<div id="{{htmlId}}_buy" onclick="Game.interstella.rocketParts.buildPart(\'{{entryName}}\', 1)" class="btn btn-default">Get {{name}}</div>',
+                '<div id="{{htmlId}}_buy10" onclick="Game.interstella.rocketParts.buildPart(\'{{entryName}}\', 10)" class="btn btn-default">Buy 10</div>',
+                '<div id="{{htmlId}}_buy{{max}}" onclick="Game.interstella.rocketParts.buildPart(\'{{entryName}}\', {{max}})" class="btn btn-default">Buy {{max}}</div>',
                 '</td></tr>'].join('\n'));
 
         instance.starTemplate = Handlebars.compile(
@@ -113,7 +113,7 @@ Game.interstellarUI = (function(){
                     'Distance: {{distance}} (<span id="{{htmlId}}Cost">{{cost}}</span> Antimatter)<br>',
                     'Planets: {{planets}}<br>',
                 '</h5>',
-                '<div class="btn btn-default" id="{{htmlId}}_explore" onclick="Game.interstellar.stars.exploreSystem(\'{{id}}\');">Explore</div>',
+                '<div class="btn btn-default" id="{{htmlId}}_explore" onclick="Game.interstella.stars.exploreSystem(\'{{id}}\');">Explore</div>',
                 '</td><td><br><br><br>',
                 '<p>{{desc}}</p>',
                 '</td></tr>'].join('\n'));
@@ -144,10 +144,10 @@ Game.interstellarUI = (function(){
                                     '<table class="table"><tr><td>',
                                         '<h4>Active Scouts: <span class="scoutActive">0</span>/<span class="scoutCount">0</span></h4>',
                                         '<div class="btn-group">',
-                                        '<button style="width:40px;" class="btn btn-default" onclick="Game.interstellar.military.addShip(\'scout\', \'max\');">++</button>',
-                                        '<button style="width:40px;" class="btn btn-default" onclick="Game.interstellar.military.addShip(\'scout\', 1);">+</button>',
-                                        '<button style="width:40px;" class="btn btn-default" onclick="Game.interstellar.military.addShip(\'scout\', -1);">-</button>',
-                                        '<button style="width:40px;" class="btn btn-default" onclick="Game.interstellar.military.addShip(\'scout\', \'none\')">--</button></div>',
+                                        '<button style="width:40px;" class="btn btn-default" onclick="Game.interstella.military.addShip(\'scout\', \'max\');">++</button>',
+                                        '<button style="width:40px;" class="btn btn-default" onclick="Game.interstella.military.addShip(\'scout\', 1);">+</button>',
+                                        '<button style="width:40px;" class="btn btn-default" onclick="Game.interstella.military.addShip(\'scout\', -1);">-</button>',
+                                        '<button style="width:40px;" class="btn btn-default" onclick="Game.interstella.military.addShip(\'scout\', \'none\')">--</button></div>',
                                         '<br><h4>Success Chance: <span id="{{htmlId}}_spyChance">90</span>%',
                                     '</td><td style="text-align:center;">',
                                         '<h4>System Fleet Statistics:</h4>',
@@ -159,7 +159,7 @@ Game.interstellarUI = (function(){
                                         // '<span class="{{htmlId}}_ships">???</span>',
                                     '</td><td style="text-align:center;">',
                                         '<h4>Threat Level: (<span class="{{htmlId}}_threat">•</span>)<br><br>',
-                                        '<button class="btn btn-default" data-dismiss="modal" onclick="Game.interstellar.military.spy(\'{{id}}\');">Send Scouts</button>',
+                                        '<button class="btn btn-default" data-dismiss="modal" onclick="Game.interstella.military.spy(\'{{id}}\');">Send Scouts</button>',
                                     '</td></tr></table>',
                                 '</div>',
                                 '<div class="modal-footer">',
@@ -206,7 +206,7 @@ Game.interstellarUI = (function(){
                                     '</td><td style="text-align:center; width:33%">',
                                         '<h4>Threat Level: (<span class="{{htmlId}}_threat">•</span>)</h4>',
                                         '<h4>Chance of Victory: <span class="{{htmlId}}_invadeChance">0</span>%</h4>',
-                                        '<button class="btn btn-default" id="{{htmlId}}_invadeButton" data-dismiss="modal" onclick="Game.interstellar.military.invadeSystem(\'{{id}}\');">Attack!</button>',
+                                        '<button class="btn btn-default" id="{{htmlId}}_invadeButton" data-dismiss="modal" onclick="Game.interstella.military.invadeSystem(\'{{id}}\');">Attack!</button>',
                                     '</td></tr></table>',
                                 '</div>',
                                 '<div class="modal-footer">',
@@ -230,7 +230,7 @@ Game.interstellarUI = (function(){
                                 '</div>',
                                 '<div class="modal-body">',
                                     '<table style="height:100%" class="table"><tr><td style="text-align:center;" vertical-align="middle">',
-                                        '<div class="btn btn-default disabled" data-dismiss="modal" id="{{htmlId}}_absorbButton" onclick="Game.interstellar.military.absorbSystem(\'{{id}}\');">Absorb (5 Opinion)</div>',
+                                        '<div class="btn btn-default disabled" data-dismiss="modal" id="{{htmlId}}_absorbButton" onclick="Game.interstella.military.absorbSystem(\'{{id}}\');">Absorb (5 Opinion)</div>',
                                     '</td></tr></table>',
                                 '</div>',
                                 '<div class="modal-footer">',
@@ -252,10 +252,10 @@ Game.interstellarUI = (function(){
         instance.invadeShipsTemplate = Handlebars.compile(
             ['<h5>{{name}}: <span class="{{entryName}}Active">0</span>/<span class="{{entryName}}Count">0</span></h5>',
                 '<div class="btn-group">',
-                '<button style="width:40px; text-align:center;" class="btn btn-default" onclick="Game.interstellar.military.addShip(\'{{entryName}}\', \'max\');">++</button>',
-                '<button style="width:40px; text-align:center;" class="btn btn-default" onclick="Game.interstellar.military.addShip(\'{{entryName}}\', 1);">+</button>',
-                '<button style="width:40px; text-align:center;" class="btn btn-default" onclick="Game.interstellar.military.addShip(\'{{entryName}}\', -1);">-</button>',
-                '<button style="width:40px; text-align:center;" class="btn btn-default" onclick="Game.interstellar.military.addShip(\'{{entryName}}\', \'none\')">--</button></div><br>',].join('\n'));
+                '<button style="width:40px; text-align:center;" class="btn btn-default" onclick="Game.interstella.military.addShip(\'{{entryName}}\', \'max\');">++</button>',
+                '<button style="width:40px; text-align:center;" class="btn btn-default" onclick="Game.interstella.military.addShip(\'{{entryName}}\', 1);">+</button>',
+                '<button style="width:40px; text-align:center;" class="btn btn-default" onclick="Game.interstella.military.addShip(\'{{entryName}}\', -1);">-</button>',
+                '<button style="width:40px; text-align:center;" class="btn btn-default" onclick="Game.interstella.military.addShip(\'{{entryName}}\', \'none\')">--</button></div><br>',].join('\n'));
 
         instance.militaryShipTemplate = Handlebars.compile(
             ['<tr id="{{htmlId}}"></tr><td>',
@@ -265,8 +265,8 @@ Game.interstellarUI = (function(){
                     '<p id="{{htmlId}}_stats">Attributes: {{stats.power}} Power, {{stats.defense}} Defense, {{stats.speed}} Speed</p>',
                     '<p id="{{htmlId}}_cost"></p>',
                 '</span>',
-                '<div id="{{htmlId}}_buy" onclick="Game.interstellar.military.buildShip(\'{{entryName}}\')" class="btn btn-default">Get 1</div>',
-                '<div id="{{htmlId}}_destroy" onclick="Game.interstellar.military.destroyShip(\'{{entryName}}\')" class="btn btn-default">Destroy 1</div>',
+                '<div id="{{htmlId}}_buy" onclick="Game.interstella.military.buildShip(\'{{entryName}}\')" class="btn btn-default">Get 1</div>',
+                '<div id="{{htmlId}}_destroy" onclick="Game.interstella.military.destroyShip(\'{{entryName}}\')" class="btn btn-default">Destroy 1</div>',
                 '</td></tr>'].join('\n'));
 
         instance.navTemplate = Handlebars.compile(
@@ -300,15 +300,15 @@ Game.interstellarUI = (function(){
                     '<span id="{{htmlId}}_opinion">{{opinion}}</span>',
                 '</td>',].join('\n'));
 
-        for(var id in Game.interstellarCategoryData){
-            Game.interstellar.categoryEntries[id] = Game.interstellarCategoryData[id];
+        for(var id in Game.interstellaCategoryData){
+            Game.interstella.categoryEntries[id] = Game.interstellaCategoryData[id];
         }
 
-        for(var id in Game.interstellar.categoryEntries) {
-            this.tab.addCategory(id, Game.interstellar.categoryEntries[id].title);
+        for(var id in Game.interstella.categoryEntries) {
+            this.tab.addCategory(id, Game.interstella.categoryEntries[id].title);
         }
 
-        for(var id in Game.interstellarData) {
+        for(var id in Game.interstellaData) {
             this.createDisplay(id);
         }
 
@@ -319,7 +319,7 @@ Game.interstellarUI = (function(){
         
 
         for(var id in this.commEntries) {
-            var data = Game.interstellar.comms.getMachineData(id);
+            var data = Game.interstella.comms.getMachineData(id);
             if(data.displayNeedsUpdate === true) {
                 this.updateMachineDisplay(data);
                 if(data.count >= data.max){
@@ -331,7 +331,7 @@ Game.interstellarUI = (function(){
         
 
         for(var id in this.rocketEntries) {
-            var data = Game.interstellar.rocket.getRocketData(id);
+            var data = Game.interstella.rocket.getRocketData(id);
             if(data.displayNeedsUpdate == true) {
                 this.updateRocketDisplay(data);                
             }
@@ -339,7 +339,7 @@ Game.interstellarUI = (function(){
         
 
         for(var id in this.rocketPartEntries) {
-            var data = Game.interstellar.rocketParts.getPartData(id);
+            var data = Game.interstella.rocketParts.getPartData(id);
             if(data.displayNeedsUpdate === true) {
                 this.updatePartDisplay(data);                
             }
@@ -347,7 +347,7 @@ Game.interstellarUI = (function(){
         
 
         for(var id in this.antimatterEntries) {
-            var data = Game.interstellar.antimatter.getMachineData(id);
+            var data = Game.interstella.antimatter.getMachineData(id);
             if(data.displayNeedsUpdate === true) {
                 this.updateMachineDisplay(data);                
             }
@@ -355,7 +355,7 @@ Game.interstellarUI = (function(){
         
 
         for(var id in this.militaryEntries) {
-            var data = Game.interstellar.military.getShipData(id);
+            var data = Game.interstella.military.getShipData(id);
             if(data.displayNeedsUpdate === true) {
                 this.updateMilitaryShipDisplay(data);                
             }
@@ -363,18 +363,18 @@ Game.interstellarUI = (function(){
         
 
         // Hides navs
-        for(var id in Game.interstellar.entries){
-            var data = Game.interstellar.getInterstellarData(id);
+        for(var id in Game.interstella.entries){
+            var data = Game.interstella.getinterstellaData(id);
             if(data.displayNeedsUpdate == true){
-                document.getElementById("interstellarTab_faction_collapse").className = "hidden";
+                document.getElementById("interstellaTab_faction_collapse").className = "hidden";
                 if(data.unlocked == true){
                     if(data.category == "faction"){
-                        document.getElementById("interstellarTab_faction_collapse").className = "";
+                        document.getElementById("interstellaTab_faction_collapse").className = "";
                     }
-                    document.getElementById("interstellarTab_link").className = "";
-                    document.getElementById("interstellarTab_" + id + "_ne").className = "collapse_interstellarTab_" + data.category;
+                    document.getElementById("interstellaTab_link").className = "";
+                    document.getElementById("interstellaTab_" + id + "_ne").className = "collapse_interstellaTab_" + data.category;
                 } else {
-                    document.getElementById("interstellarTab_" + id + "_ne").className = "collapse_interstellarTab_" + data.category + " hidden";
+                    document.getElementById("interstellaTab_" + id + "_ne").className = "collapse_interstellaTab_" + data.category + " hidden";
                 }
                 data.displayNeedsUpdate = false;                
             }
@@ -383,12 +383,12 @@ Game.interstellarUI = (function(){
 
         var systemsConquered = 0;
         for(var id in this.starEntries){
-            var data = Game.interstellar.stars.getStarData(id);
+            var data = Game.interstella.stars.getStarData(id);
             if(data.owned){
                 systemsConquered += 1;
             }
             if(data.explored == false){
-                if(Game.interstellar.comms.entries.IRS.count + Game.interstellar.comms.entries.astroBreakthrough.count*5 >= data.distance){
+                if(Game.interstella.comms.entries.IRS.count + Game.interstella.comms.entries.astroBreakthrough.count*5 >= data.distance){
                     document.getElementById('star_' + id).className = "";
                 }
                 $('#star_' + id + 'Cost').setText(Game.settings.format(data.distance*10000));
@@ -401,7 +401,7 @@ Game.interstellarUI = (function(){
             
             if(data.explored){
                 // Shows the faction tabs that have explored stars - relevant to previous for loop
-                var nav = Game.interstellar.entries[data.factionId]
+                var nav = Game.interstella.entries[data.factionId]
                 if(nav.unlocked != true){
                     nav.unlocked = true;
                     nav.displayNeedsUpdate = true;
@@ -414,18 +414,18 @@ Game.interstellarUI = (function(){
                     $('#star_' + id + '_owned').text("Protected");
                     document.getElementById('star_' + id + '_conquerButtons').className = "";
 
-                    var multi = Game.interstellar.military.getMultiplier(data.factionId);
+                    var multi = Game.interstella.military.getMultiplier(data.factionId);
 
                     // Updates Spy Chance
-                    var spyChance = Math.min(100, Game.interstellar.military.getSpyChance(data, multi));
+                    var spyChance = Math.min(100, Game.interstella.military.getSpyChance(data, multi));
                     $('#star_' + data.id + '_spyChance').text(Game.settings.format(spyChance,2));
 
                     // Updates Threat Level
-                    var threat = Game.interstellar.military.getThreat(data.stats.power*multi, data.stats.speed);
+                    var threat = Game.interstella.military.getThreat(data.stats.power*multi, data.stats.speed);
                     $('.star_' + data.id + '_threat').text(threat);
 
                     // Updates Victory Chance
-                    var chance = Game.interstellar.military.getChance(data);
+                    var chance = Game.interstella.military.getChance(data);
                     if(chance == undefined){
                         chance = 0;
                     } else if(chance > 1){
@@ -477,7 +477,7 @@ Game.interstellarUI = (function(){
         }
 
         // Updates Antimatter Nav
-        Game.interstellar.stars.systemsConquered = systemsConquered;
+        Game.interstella.stars.systemsConquered = systemsConquered;
         $('#sphereMax').text(systemsConquered+1)
         antimatterStorage = 100000*(systemsConquered+1);
         $('#intnav_antimatter_current').text(Game.settings.format(antimatter));
@@ -606,8 +606,8 @@ Game.interstellarUI = (function(){
         var factionTabContentRoot = $('#' + this.tab.getContentElementId(starData.factionId));
         factionTabContentRoot.append($(factionStar));
 
-        for(ship in Game.interstellar.military.entries){
-            var shipData = Game.interstellar.military.getShipData(ship);
+        for(ship in Game.interstella.military.entries){
+            var shipData = Game.interstella.military.getShipData(ship);
             var target = $('#' + starData.htmlId + '_invadeShips');
             var html = this.invadeShipsTemplate(shipData);
             target.append($(html));
@@ -629,8 +629,8 @@ Game.interstellarUI = (function(){
         var tabTitle = this.titleTemplate(data);
         target.append(tabTitle);
 
-        for (var id in Game.interstellar.comms.entries){
-            var machineData = Game.interstellar.comms.entries[id];
+        for (var id in Game.interstella.comms.entries){
+            var machineData = Game.interstella.comms.entries[id];
             this.createCommsMachine(data, machineData);
         }
     }
@@ -640,12 +640,12 @@ Game.interstellarUI = (function(){
         var tabTitle = this.titleTemplate(data);
         target.append(tabTitle);
 
-        for (var id in Game.interstellar.rocket.entries){
-            var rocketData = Game.interstellar.rocket.entries[id];
+        for (var id in Game.interstella.rocket.entries){
+            var rocketData = Game.interstella.rocket.entries[id];
             this.createRocket(data, rocketData);
         }
-        for (var id in Game.interstellar.rocketParts.entries){
-            var partData = Game.interstellar.rocketParts.entries[id];
+        for (var id in Game.interstella.rocketParts.entries){
+            var partData = Game.interstella.rocketParts.entries[id];
             this.createRocketPart(data, partData);
         }
     }
@@ -655,8 +655,8 @@ Game.interstellarUI = (function(){
         var tabTitle = this.titleTemplate(data);
         target.append(tabTitle);
 
-        for (var id in Game.interstellar.antimatter.entries){
-            var machineData = Game.interstellar.antimatter.entries[id];
+        for (var id in Game.interstella.antimatter.entries){
+            var machineData = Game.interstella.antimatter.entries[id];
             this.createMachine(data, machineData);
         }
     }
@@ -666,8 +666,8 @@ Game.interstellarUI = (function(){
         var tabTitle = this.titleTemplate(data);
         target.append(tabTitle);
 
-        for (var id in Game.interstellar.stars.entries){
-            var starData = Game.interstellar.stars.entries[id];
+        for (var id in Game.interstella.stars.entries){
+            var starData = Game.interstella.stars.entries[id];
             this.createStar(data, starData);
         }
     }
@@ -677,8 +677,8 @@ Game.interstellarUI = (function(){
         var tabTitle = this.militaryTitleTemplate(data);
         target.append(tabTitle);
 
-        for (var id in Game.interstellar.military.entries){
-            var shipData = Game.interstellar.military.entries[id];
+        for (var id in Game.interstella.military.entries){
+            var shipData = Game.interstella.military.entries[id];
             this.createMilitaryShip(data, shipData);
         }
     }
@@ -688,15 +688,15 @@ Game.interstellarUI = (function(){
         var tabTitle = this.factionTitleTemplate(data);
         target.append(tabTitle);
 
-        for (var id in Game.interstellar.stars.entries){
-            var starData = Game.interstellar.stars.entries[id];
+        for (var id in Game.interstella.stars.entries){
+            var starData = Game.interstella.stars.entries[id];
             if(starData.factionId == data.id){
                 this.createFactionStar(data, starData);
             }
         }
     }
 
-    instance.createInterstellarNav = function(data) {
+    instance.createinterstellaNav = function(data) {
         var target = $('#' + this.tab.getNavElementId(data.id));
         var html = this.navTemplate(data);
         if(data.id == "comms"){
@@ -727,11 +727,11 @@ Game.interstellarUI = (function(){
     };
 
     instance.createDisplay = function(id) {
-        var data = Game.interstellar.getInterstellarData(id);
+        var data = Game.interstella.getinterstellaData(id);
         this.tab.addNavEntry(data.category, id);
 
         
-        this.createInterstellarNav(data);
+        this.createinterstellaNav(data);
 
         this.entries[data.htmlId] = data;
     };
@@ -745,7 +745,7 @@ Game.interstellarUI = (function(){
         }
         // Update the cost display
         if(data.cost) {
-            Game.interstellar[data.category].updateCost(data.entryName);
+            Game.interstella[data.category].updateCost(data.entryName);
             var costDisplayData = this.buildCostDisplay(this.rocketPartObservers[data.id], data);
             var costElement = $('#' + data.htmlId + '_cost');
             costElement.empty();
@@ -768,7 +768,7 @@ Game.interstellarUI = (function(){
             document.getElementById("interRocketBuilt").className = "green";
             document.getElementById("interRocketBuilt").textContent = "Built";
             for(var id in this.rocketPartEntries){
-                var partData = Game.interstellar.rocketParts.entries[id];
+                var partData = Game.interstella.rocketParts.entries[id];
                 if(partData.entryName == "shield" || "engine" || "aero"){
                     document.getElementById("rocpart_" + partData.entryName).className = "hidden";
                 }
@@ -798,7 +798,7 @@ Game.interstellarUI = (function(){
         }
         // Update the cost display
         if(data.cost) {
-            Game.interstellar[data.category].updateCost(data.entryName);
+            Game.interstella[data.category].updateCost(data.entryName);
             var costDisplayData = this.buildCostDisplay(this.commObservers[data.id] || this.antimatterObservers[data.id], data);
             var costElement = $('#' + data.htmlId + '_cost');
             costElement.empty();
@@ -817,13 +817,13 @@ Game.interstellarUI = (function(){
         }
         // Update the cost display
         if(data.cost) {
-            Game.interstellar[data.category].updateCost(data.entryName);
+            Game.interstella[data.category].updateCost(data.entryName);
             var costDisplayData = this.buildCostDisplay(this.commObservers[data.id] || this.militaryObservers[data.id], data);
             var costElement = $('#' + data.htmlId + '_cost');
             costElement.empty();
             costElement.append($(costDisplayData));
         }
-        Game.interstellar.military.updateCost(data.entryName);
+        Game.interstella.military.updateCost(data.entryName);
         data.displayNeedsUpdate = false;
     };
 
@@ -872,7 +872,7 @@ Game.interstellarUI = (function(){
 
         var segments = [];
         for(var id in data.cost) {
-            var rocketPartData = Game.interstellar.rocketParts.getPartData(id);
+            var rocketPartData = Game.interstella.rocketParts.getPartData(id);
             if(!data) {
                 console.error("Unknown Part in cost: " + id);
                 continue;
