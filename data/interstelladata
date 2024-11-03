@@ -1,9 +1,9 @@
-Game.interstellarCategoryData = (function () {
+Game.interstellaCategoryData = (function () {
 
     var instance = {};
 
     instance.general = {
-        title: 'Interstellar',
+        title: 'interstella',
         category: 'general'
     };
 
@@ -16,7 +16,7 @@ Game.interstellarCategoryData = (function () {
 
 }());
 
-Game.interstellarData = (function(){
+Game.interstellaData = (function(){
 
 	var instance = {};
 
@@ -37,7 +37,7 @@ Game.interstellarData = (function(){
 
 	instance.antimatter = {
 		name: 'Antimatter',
-		desc: 'Your fuel for interstellar travel is produced here. Unfortunately, you can only handle 100k Antimatter per Star System as it is incredibly volatile.<br><br><button class="btn btn-default" onclick="toggleAntimatter()">Toggle Antimatter <span id="antimatterToggled">On</span></button>',
+		desc: 'Your fuel for interstella travel is produced here. Unfortunately, you can only handle 100k Antimatter per Star System as it is incredibly volatile.<br><br><button class="btn btn-default" onclick="toggleAntimatter()">Toggle Antimatter <span id="antimatterToggled">On</span></button>',
 		category: 'general',
 		unlocked: false
 	};
@@ -90,7 +90,7 @@ Game.interstellarData = (function(){
 
 	instance.moviton = {
 		name: "Moviton Syndicate",
-		desc: "The Moviton Syndicate is an expansionist centred faction, with a goal of conquest over the galaxy. They often play both sides of a conflict, hoping to gain from the chaos. They offer improvements in your travel, including rocket building and interstellar travel.",
+		desc: "The Moviton Syndicate is an expansionist centred faction, with a goal of conquest over the galaxy. They often play both sides of a conflict, hoping to gain from the chaos. They offer improvements in your travel, including rocket building and interstella travel.",
 		category: "faction",
 		opinion: 0,
 		unlocked: false
@@ -115,7 +115,7 @@ Game.commsData = (function(){
 	instance.astroBreakthrough = {
 		entryName: 'astroBreakthrough',
 		name: 'Astronomical Breakthrough',
-		desc: 'A huge problem with the theory of interstellar space travel is on the verge of being broken. Make it happen with this upgrade. This is a one time upgrade, increasing your exploration range by 5 Light Years.',
+		desc: 'A huge problem with the theory of interstella space travel is on the verge of being broken. Make it happen with this upgrade. This is a one time upgrade, increasing your exploration range by 5 Light Years.',
 		category: 'comms',
 		unlocked: true,
 		displayNeedsUpdate: true,
@@ -135,7 +135,7 @@ Game.commsData = (function(){
 
 	instance.IRS = {
 		entryName: 'IRS',
-		name: 'Interstellar Radar Scanner',
+		name: 'interstella Radar Scanner',
 		desc: 'The Overlord gifts you with the technology to discover stars in outer space by using the IRS. Each one increases the exploration range by 1 Light Year.',
 		category: 'comms',
 		unlocked: true,
