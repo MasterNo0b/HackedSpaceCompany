@@ -1,4 +1,4 @@
-Game.interstellar.stars = (function(){
+Game.interstella.stars = (function(){
 
     var instance = {};
 
@@ -37,7 +37,7 @@ Game.interstellar.stars = (function(){
     };
 
     instance.exploreSystem = function(id){
-        if(Game.interstellar.rocket.entries.tier1Rocket.built == true){
+        if(Game.interstella.rocket.entries.tier1Rocket.built == true){
             var data = this.entries[id];
             var exploreCost = data.distance * 10000;
             if(antimatter >= exploreCost){
