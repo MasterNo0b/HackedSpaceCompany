@@ -1,4 +1,4 @@
-Game.interstellar.rocket = (function(){
+Game.interstella.rocket = (function(){
 
 	var instance = {};
 
@@ -24,9 +24,9 @@ Game.interstellar.rocket = (function(){
         var data = this.entries[entryName];
         for(var part in data.cost){
             var target = 0;
-            for(var i = 0; i < Object.keys(Game.interstellarUI.rocketPartObservers[entryName]).length; i++){
-                if(part == Game.interstellarUI.rocketPartObservers[entryName][i].part){
-                    Game.interstellarUI.rocketPartObservers[entryName][i].value = data.cost[part.toString()];
+            for(var i = 0; i < Object.keys(Game.interstellaUI.rocketPartObservers[entryName]).length; i++){
+                if(part == Game.interstellaUI.rocketPartObservers[entryName][i].part){
+                    Game.interstellaUI.rocketPartObservers[entryName][i].value = data.cost[part.toString()];
                 }
             }
         }
@@ -35,11 +35,11 @@ Game.interstellar.rocket = (function(){
     instance.buildRocket = function(entryName){
         var partPass = 0;
         for(var part in this.entries[entryName].cost){
-            if(Game.interstellar.rocketParts.entries[part].count >= this.entries[entryName].cost[part]){
+            if(Game.interstella.rocketParts.entries[part].count >= this.entries[entryName].cost[part]){
                 partPass += 1;
             }
         }
-        if(partPass === Object.keys(Game.interstellar.rocket.entries[entryName].cost).length){
+        if(partPass === Object.keys(Game.interstella.rocket.entries[entryName].cost).length){
             for(var part in this.entries[entryName].cost){
             }
             this.entries[entryName].built = true;
