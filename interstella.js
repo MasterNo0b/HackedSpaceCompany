@@ -1,4 +1,4 @@
-Game.interstellar = (function(){
+Game.interstella = (function(){
 
 	var instance = {};
 
@@ -8,8 +8,8 @@ Game.interstellar = (function(){
     instance.navCount = 0;
 
 	instance.initialise = function (){
-		for (var id in Game.interstellarData) {
-            var data = Game.interstellarData[id];
+		for (var id in Game.interstellaData) {
+            var data = Game.interstellaData[id];
             
             this.navCount++;
             this.entries[id] = $.extend({}, data, {
@@ -21,7 +21,7 @@ Game.interstellar = (function(){
             
         }
 
-        console.debug("Loaded " + this.navCount + " Interstellar Navs");
+        console.debug("Loaded " + this.navCount + " interstella Navs");
         this.comms.initialise();
         this.rocketParts.initialise();
         this.rocket.initialise();
@@ -30,65 +30,65 @@ Game.interstellar = (function(){
         this.stars.initialise();
 	}
 
-	instance.getInterstellarData = function(id) {
+	instance.getinterstellaData = function(id) {
         return this.entries[id];
     };
 
     instance.save = function(data){
-        data.interstellar = {comms: {}, rocket: {}, rocketParts: {}, antimatter: {}, stars: {}, military: {}};
+        data.interstella = {comms: {}, rocket: {}, rocketParts: {}, antimatter: {}, stars: {}, military: {}};
         for(id in this.comms.entries){
-            data.interstellar.comms[id] = this.comms.entries[id];
+            data.interstella.comms[id] = this.comms.entries[id];
         }
         for(id in this.rocket.entries){
-            data.interstellar.rocket[id] = this.rocket.entries[id];
+            data.interstella.rocket[id] = this.rocket.entries[id];
         }
         for(id in this.rocketParts.entries){
-            data.interstellar.rocketParts[id] = this.rocketParts.entries[id];
+            data.interstella.rocketParts[id] = this.rocketParts.entries[id];
         }
         for(id in this.antimatter.entries){
-            data.interstellar.antimatter[id] = this.antimatter.entries[id];
+            data.interstella.antimatter[id] = this.antimatter.entries[id];
         }
         for(id in this.military.entries){
-            data.interstellar.military[id] = this.military.entries[id];
+            data.interstella.military[id] = this.military.entries[id];
         }
         for(id in this.stars.entries){
-            data.interstellar.stars[id] = this.stars.entries[id];
+            data.interstella.stars[id] = this.stars.entries[id];
         }
     };
 
     instance.load = function(data){
-        if(data.interstellar){
-            if(typeof data.interstellar.comms !== 'undefined'){
-                for(id in data.interstellar.comms){
-                    this.comms.entries[id].count = data.interstellar.comms[id].count;
+        if(data.interstella){
+            if(typeof data.interstella.comms !== 'undefined'){
+                for(id in data.interstella.comms){
+                    this.comms.entries[id].count = data.interstella.comms[id].count;
                 }
             }
-            if(typeof data.interstellar.rocket !== 'undefined'){
-                for(id in data.interstellar.rocket){
-                    this.rocket.entries[id].built = data.interstellar.rocket[id].built;
+            if(typeof data.interstella.rocket !== 'undefined'){
+                for(id in data.interstella.rocket){
+                    this.rocket.entries[id].built = data.interstella.rocket[id].built;
                 }
             }
-            if(typeof data.interstellar.rocketParts !== 'undefined'){
-                for(id in data.interstellar.rocketParts){
-                    this.rocketParts.entries[id].count = data.interstellar.rocketParts[id].count;
+            if(typeof data.interstella.rocketParts !== 'undefined'){
+                for(id in data.interstella.rocketParts){
+                    this.rocketParts.entries[id].count = data.interstella.rocketParts[id].count;
                 }
             }
-            if(typeof data.interstellar.antimatter !== 'undefined'){
-                for(id in data.interstellar.antimatter){
-                    this.antimatter.entries[id].count = data.interstellar.antimatter[id].count;
+            if(typeof data.interstella.antimatter !== 'undefined'){
+                for(id in data.interstella.antimatter){
+                    this.antimatter.entries[id].count = data.interstella.antimatter[id].count;
                 }
             }
-            if(typeof data.interstellar.military !== 'undefined'){
-                for(id in data.interstellar.military){
-                    this.military.entries[id].count = data.interstellar.military[id].count;
+            if(typeof data.interstella.military !== 'undefined'){
+                for(id in data.interstella.military){
+                    this.military.entries[id].count = data.interstella.military[id].count;
                 }
             }
-            if(typeof data.interstellar.stars !== 'undefined'){
-                for(id in data.interstellar.stars){
+            if(typeof data.interstella.stars !== 'undefined'){
+                for(id in data.interstella.stars){
                     if(this.stars.entries[id]){
-                        this.stars.entries[id].explored = data.interstellar.stars[id].explored;
-                        this.stars.entries[id].owned = data.interstellar.stars[id].owned;
-                        this.stars.entries[id].spy = data.interstellar.stars[id].spy;
+                        this.stars.entries[id].explored = data.interstella.stars[id].explored;
+                        this.stars.entries[id].owned = data.interstella.stars[id].owned;
+                        this.stars.entries[id].spy = data.interstella.stars[id].spy;
                     }
                 }
             }
@@ -110,7 +110,7 @@ Game.interstellar = (function(){
                     this.entries[objects[i]].unlocked = true;
                     this.entries[objects[i]].displayNeedsUpdate = true;
                 }
-                document.getElementById("interstellarTab").className = "";
+                document.getElementById("interstellaTab").className = "";
             }
         }
         for(var id in this.stars.entries){
@@ -123,8 +123,8 @@ Game.interstellar = (function(){
         for(var id in this.entries){
             if(id == "rocket" || "travel")continue;
             console.log(id)
-            for(var entry in Game.interstellar[id].entries){
-                Game.interstellar[id].updateCost[entry];
+            for(var entry in Game.interstella[id].entries){
+                Game.interstella[id].updateCost[entry];
             }
         }
 
@@ -139,7 +139,7 @@ Game.interstellar = (function(){
 
 }());
 
-Game.interstellar.comms = (function(){
+Game.interstella.comms = (function(){
 
     var instance = {};
 
@@ -167,10 +167,10 @@ Game.interstellar.comms = (function(){
     instance.updateCost = function(entryName){
         for(var resource in this.entries[entryName].cost){
             var target = 0;
-            for(var i = 0; i < Object.keys(Game.interstellarUI.commObservers[entryName]).length; i++){
-                if(resource == Game.interstellarUI.commObservers[entryName][i].resource){
+            for(var i = 0; i < Object.keys(Game.interstellaUI.commObservers[entryName]).length; i++){
+                if(resource == Game.interstellaUI.commObservers[entryName][i].resource){
                     this.entries[entryName].cost[resource.toString()] = this.calcCost(this.entries[entryName], resource);
-                    Game.interstellarUI.commObservers[entryName][i].value = this.entries[entryName].cost[resource.toString()];
+                    Game.interstellaUI.commObservers[entryName][i].value = this.entries[entryName].cost[resource.toString()];
                 }
             }
         }
@@ -211,7 +211,7 @@ Game.interstellar.comms = (function(){
 
 }());
 
-Game.interstellar.antimatter = (function(){
+Game.interstella.antimatter = (function(){
 
     var instance = {};
 
@@ -239,10 +239,10 @@ Game.interstellar.antimatter = (function(){
     instance.updateCost = function(entryName){
         for(var resource in this.entries[entryName].cost){
             var target = 0;
-            for(var i = 0; i < Object.keys(Game.interstellarUI.antimatterObservers[entryName]).length; i++){
-                if(resource == Game.interstellarUI.antimatterObservers[entryName][i].resource){
+            for(var i = 0; i < Object.keys(Game.interstellaUI.antimatterObservers[entryName]).length; i++){
+                if(resource == Game.interstellaUI.antimatterObservers[entryName][i].resource){
                     this.entries[entryName].cost[resource.toString()] = this.calcCost(this.entries[entryName], resource);
-                    Game.interstellarUI.antimatterObservers[entryName][i].value = this.entries[entryName].cost[resource.toString()];
+                    Game.interstellaUI.antimatterObservers[entryName][i].value = this.entries[entryName].cost[resource.toString()];
                 }
             }
         }
@@ -287,7 +287,7 @@ Game.interstellar.antimatter = (function(){
 
 }());
 
-Game.interstellar.military = (function(){
+Game.interstella.military = (function(){
 
     var instance = {};
 
@@ -324,10 +324,10 @@ Game.interstellar.military = (function(){
     instance.updateCost = function(entryName){
         for(var resource in this.entries[entryName].cost){
             var target = 0;
-            for(var i = 0; i < Object.keys(Game.interstellarUI.militaryObservers[entryName]).length; i++){
-                if(resource == Game.interstellarUI.militaryObservers[entryName][i].resource){
+            for(var i = 0; i < Object.keys(Game.interstellaUI.militaryObservers[entryName]).length; i++){
+                if(resource == Game.interstellaUI.militaryObservers[entryName][i].resource){
                     this.entries[entryName].cost[resource.toString()] = this.calcCost(this.entries[entryName], resource);
-                    Game.interstellarUI.militaryObservers[entryName][i].value = this.entries[entryName].cost[resource.toString()];
+                    Game.interstellaUI.militaryObservers[entryName][i].value = this.entries[entryName].cost[resource.toString()];
                 }
             }
         }
@@ -443,8 +443,8 @@ Game.interstellar.military = (function(){
         ship.displayNeedsUpdate = true;
         this.updateFleetStats();
         this.updateActiveShips();
-        for(var star in Game.interstellar.stars.entries){
-            var data = Game.interstellar.stars.entries[star];
+        for(var star in Game.interstella.stars.entries){
+            var data = Game.interstella.stars.entries[star];
             if(data.explored == true && data.owned == false){
                 data.displayNeedsUpdate = true;
             }
@@ -476,7 +476,7 @@ Game.interstellar.military = (function(){
 
     instance.spy = function(starName){
         console.log("Spying on " + starName);
-        var star = Game.interstellar.stars.getStarData(starName);
+        var star = Game.interstella.stars.getStarData(starName);
         var chance = this.getSpyChance(star)/100;
         var roll = Math.random();
         if(chance >= roll){
@@ -527,7 +527,7 @@ Game.interstellar.military = (function(){
 
     instance.invadeSystem = function(starName){
         if(this.power!=0){
-            var star = Game.interstellar.stars.getStarData(starName);
+            var star = Game.interstella.stars.getStarData(starName);
             var chance = this.getChance(star);
             if(chance == "peace"){
                 instance.absorbSystem(starName);
@@ -578,7 +578,7 @@ Game.interstellar.military = (function(){
     };
 
     instance.absorbSystem = function(id){
-        var data = Game.interstellar.stars.entries[id];
+        var data = Game.interstella.stars.entries[id];
         var faction = Game.stargaze.getStargazeData(data.factionId);
         if(faction.opinion >= 60){
             faction.opinion -= 5;
